@@ -1,165 +1,165 @@
-#ifndef __LIVRE__
-#define __LIVRE__
+#ifndef __Book__
+#define __Book__
 #include <string>
 
 
-class Livre
+class Book
 {
 private:
 /*j'ai choisit le type char* au lieu de string parceque je ne connais pas comment retourné un string avec une fonction */
-    std::string nom;   
-    std::string auteur;
-    std::string editeur;  //maison d'edition du libre
-    std::string langue; 
-    std::string description; // ici on vas metre l'etat physique du livre et aussi un bref resumé du livre ainsi que ce qu'il posséde dans son contenu
-    unsigned int nombre_de_pages; // unsigned pour précisé que le nombre soit positif et int pour entié
-    bool disponible; //si le livre est à la bibliotheque ou non.    
+    std::string name;   
+    std::string author;
+    std::string editor;  //maison d'edition du libre
+    std::string language; 
+    std::string description; // ici on vas metre l'etat physique du Book et aussi un bref resumé du Book ainsi que ce qu'il posséde dans son contenu
+    unsigned int number_of_pages; // unsigned pour précisé que le nombre soit positif et int pour entié
+    bool available; //si le Book est à la bibliotheque ou non.    
 public:
     /* Déclarons à présent notre constructeurs par défaut */
-    Livre();
+    Book();
     /* contructeur par copie il te sera utile quand tu aura plusieur fois le meme 
-    livres dans la bibliothe et tu veut changé ça */
-    Livre(const Livre& autre); 
+    Books dans la bibliothe et tu veut changé ça */
+    Book(const Book& autre); 
     //puis le constructeur qui prend les parametre.
-    Livre(std::string nom,std::string auteur,std::string editeur,std::string langue,std::string description, unsigned int nombre_de_pages, bool disponible);
+    Book(std::string name,std::string author,std::string editor,std::string language,std::string description, unsigned int number_of_pages, bool available);
 
     /* Déclaron les fonctions qui vont nous permetre d'intéragir avec la class */
-    /*Commmençons par les fonctions qui permetent de modifié les informations du livre*/
-    void setNom(std::string);
-    void setAuteur(std::string);
-    void setEditeur(std::string);
-    void setLangue(std::string);
+    /*Commmençons par les fonctions qui permetent de modifié les informations du Book*/
+    void setName(std::string);
+    void setAuthor(std::string);
+    void setEditor(std::string);
+    void setLanguage(std::string);
     void setDescription(std::string);
-    void setDisponible(bool);
-    void setNombre_de_pages(int);
-    /* Déclarons à présent les fonctions pour récupéré les valeurs du livre */
-    std::string getNom() const;
-    std::string getAuteur() const;
-    std::string getEditeur() const;
-    std::string getLangue() const;
+    void setAvailable(bool);
+    void setNumber_of_pages(int);
+    /* Déclarons à présent les fonctions pour récupéré les valeurs du Book */
+    std::string getName() const;
+    std::string getAuthor() const;
+    std::string getEditor() const;
+    std::string getLanguage() const;
     std::string getDescription() const;
-    unsigned int getNombre_de_pages() const;
-    bool getDisponible() const;
+    unsigned int getNumber_of_pages() const;
+    bool getAvailable() const;
     // Déclarons le destructeur.
-    ~Livre();
+    ~Book();
 
 };
 
-// le contructeur vas nous permettre de crée créé le livre par défaut.
-   Livre::Livre()
+// le contructeur vas nous permettre de crée créé le Book par défaut.
+   Book::Book()
     {
-    nom = "inconnu";  // Utilise strdup pour copier une chaîne vide
-    auteur = "inconnu";
-    editeur = "inconnu";
-    langue = "inconnu";
+    name = "inconnu";  // Utilise strdup pour copier une chaîne vide
+    author = "inconnu";
+    editor = "inconnu";
+    language = "inconnu";
     description = "inconnu";
-     nombre_de_pages=0;
-     disponible=false;
+     number_of_pages=0;
+     available=false;
     }
 
     // Constructeur par copie
-    Livre::Livre(const Livre& autre) {
-        nom = autre.nom; 
-        auteur = autre.auteur;
-        editeur = autre.editeur;
-        langue = autre.langue;
-        description = autre.description;
-        nombre_de_pages = autre.nombre_de_pages; 
-        disponible = autre.disponible;
+    Book::Book(const Book& autre) {
+        this->name = autre.name; 
+        this->author = autre.author;
+        this->editor = autre.editor;
+        this->language = autre.language;
+        this->description = autre.description;
+        this->number_of_pages = autre.number_of_pages; 
+        this->available = autre.available;
     }
 
     // Constructeur avec paramètres
-    Livre::Livre(std::string nom,std::string auteur,std::string editeur,std::string langue,std::string description, unsigned int nombre_de_pages, bool disponible) {
-        this->nom = nom;
-        this->auteur = auteur;
-        this->editeur = editeur;
-        this->langue = langue;
+    Book::Book(std::string name,std::string author,std::string editor,std::string language,std::string description, unsigned int number_of_pages, bool available) {
+        this->name = name;
+        this->author = author;
+        this->editor = editor;
+        this->language = language;
         this->description = description;
-        this->nombre_de_pages = nombre_de_pages;
-        this->disponible = disponible;
+        this->number_of_pages = number_of_pages;
+        this->available = available;
     }
 
-    // ici je définit tous simplement les fontions qui vont nous servir à enregistré un livre
-    void Livre::setNom(std::string valeur)
+    // ici je définit tous simplement les fontions qui vont nous servir à enregistré un Book
+    void Book::setName(std::string valeur)
     { //à cahque fois je vais libére l'espace avant d'affecter une nouvelle valeur
-        this->nom=valeur;
+        this->name=valeur;
     }
     /* jutilise beaucoup le 'this' pour pas qu'il y ai une erreur dans le script à un moment 
     c'est pour corigé les ambiguté au cas ou tu utilise mes variable dant ton code*/
-    void Livre::setAuteur(std::string valeur)
+    void Book::setAuthor(std::string valeur)
         {
 
-        this->auteur=valeur;
+        this->author=valeur;
     }
 
-    void Livre::setEditeur(std::string valeur)
+    void Book::setEditor(std::string valeur)
         {
 
-        this->editeur=valeur;
+        this->editor=valeur;
     }
 
-    void Livre::setLangue(std::string valeur)
+    void Book::setLanguage(std::string valeur)
         {
 
-        this->langue=valeur;
+        this->language=valeur;
     }
 
-    void Livre::setDescription(std::string valeur)
+    void Book::setDescription(std::string valeur)
         {
 
         this->description=valeur;
     }
 
-    void Livre::setDisponible(bool valeur)
+    void Book::setAvailable(bool valeur)
         {
-        this->disponible=valeur;
+        this->available=valeur;
     }
 
-    void Livre::setNombre_de_pages(int valeur)
+    void Book::setNumber_of_pages(int valeur)
         {
-        this->nombre_de_pages=valeur;
+        this->number_of_pages=valeur;
     }
 
 
-    /* Déclarons à présent les fonctions pour récupéré les valeurs du livre */
-    std::string Livre::  getNom() const 
+    /* Déclarons à présent les fonctions pour récupéré les valeurs du Book */
+    std::string Book::  getName() const 
     {
-        return this->nom ;
+        return this->name ;
     }
 
-    std::string Livre::getAuteur() const 
+    std::string Book::getAuthor() const 
     {
-        return  this->auteur ;
+        return  this->author ;
     }
 
-    std::string Livre::getEditeur() const 
+    std::string Book::getEditor() const 
     {
-        return  this->editeur ;
+        return  this->editor ;
     }
 
-    std::string Livre::getLangue() const 
+    std::string Book::getLanguage() const 
     {
-        return  this->langue ;
+        return  this->language ;
     }
 
-    std::string Livre::getDescription() const 
+    std::string Book::getDescription() const 
     {
         return  this->description ;
     }
 
-    unsigned int Livre::getNombre_de_pages() const 
+    unsigned int Book::getNumber_of_pages() const 
     {
-        return  this->nombre_de_pages ;
+        return  this->number_of_pages ;
     }
 
-    bool Livre::getDisponible() const 
+    bool Book::getAvailable() const 
     {
-        return  this->disponible ;
+        return  this->available ;
     }
 
 
 //puis je définit le destructeur
-    Livre :: ~Livre(){}
+    Book :: ~Book(){}
 
 #endif
 

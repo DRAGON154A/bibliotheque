@@ -4,62 +4,60 @@
 using namespace std;
 
 int main(void)
-{
- 
-    Livre livre1;
+{Book livre1;
     // vérifions que les parametres pas défaut sont bien assigné.
         cout << endl<<"livre1" << endl<<"Teste des valeur par defaut "<<endl;
-        cout << "nom " << livre1.getNom()<<endl;
-        cout << "Auteur " << livre1.getAuteur() <<endl;
-        cout << "Editeur " << livre1.getEditeur() <<endl;
-        cout << "Langue " << livre1.getLangue() <<endl;
+        cout << "nom " << livre1.getName()<<endl;
+        cout << "Auteur " << livre1.getAuthor() <<endl;
+        cout << "Editeur " << livre1.getEditor() <<endl;
+        cout << "Langue " << livre1.getLanguage() <<endl;
         cout << "Description " << livre1.getDescription() <<endl;
-        cout << "Disponibilité " << livre1.getDisponible() <<endl;
-        cout << "Nombre de pages " << livre1.getNombre_de_pages() <<endl;
+        cout << "Disponibilité " << livre1.getAvailable() <<endl;
+        cout << "Nombre de pages " << livre1.getNumber_of_pages() <<endl;
 
-    Livre livre2;
+    Book livre2;
 
         //affectons certaine valeur pour tester l'ajout
 
-        livre2.setNom("Ajouter");
-        livre2.setAuteur("Ajouter");
-        livre2.setEditeur("Ajouter");
-        livre2.setLangue("Ajouter");
+        livre2.setName("Ajouter");
+        livre2.setAuthor("Ajouter");
+        livre2.setEditor("Ajouter");
+        livre2.setLanguage("Ajouter");
         livre2.setDescription("Ajouter");
-        livre2.setDisponible(true);
-        livre2.setNombre_de_pages(200);
+        livre2.setAvailable(true);
+        livre2.setNumber_of_pages(200);
 
 
         cout << endl<<"livre2" << endl<<"Teste des valeur ajouter "<<endl;
-        cout << "nom " << livre2.getNom()<<endl;
-        cout << "Auteur " << livre2.getAuteur() <<endl;
-        cout << "Editeur " << livre2.getEditeur() <<endl;
-        cout << "Langue " << livre2.getLangue() <<endl;
-        cout << "Disponibilité " << livre2.getDisponible() <<endl;
-        cout << "Nombre de pages " << livre2.getNombre_de_pages() <<endl;
+        cout << "nom " << livre2.getName()<<endl;
+        cout << "Auteur " << livre2.getAuthor() <<endl;
+        cout << "Editor " << livre2.getEditor() <<endl;
+        cout << "Langue " << livre2.getLanguage() <<endl;
+        cout << "Disponibilité " << livre2.getAvailable() <<endl;
+        cout << "Nombre de pages " << livre2.getNumber_of_pages() <<endl;
 
-    Livre livre3("le_troisime_livre ","arthur ","ma_consience","Fr","histoir,",120,true);
+    Book livre3("le_troisime_livre ","arthur ","ma_consience","Fr","histoir,",120,true);
 
         //teste du contructeur par parametre.
 
         cout << endl<<"livre3 " << endl<<"Teste du contructeur par parametre "<<endl;
-        cout << "nom " << livre3.getNom()<<endl;
-        cout << "Auteur " << livre3.getAuteur() <<endl;
-        cout << "Editeur " << livre3.getEditeur() <<endl;
-        cout << "Langue " << livre3.getLangue() <<endl;
-        cout << "Disponibilité " << livre3.getDisponible() <<endl;
-        cout << "Nombre de pages " << livre3.getNombre_de_pages() <<endl;
+        cout << "nom " << livre3.getName()<<endl;
+        cout << "Auteur " << livre3.getAuthor() <<endl;
+        cout << "Editeur " << livre3.getEditor() <<endl;
+        cout << "Langue " << livre3.getLanguage() <<endl;
+        cout << "Disponibilité " << livre3.getAvailable() <<endl;
+        cout << "Nombre de pages " << livre3.getNumber_of_pages() <<endl;
     
-    Livre livre4 =livre2 ;
+    Book livre4 =livre2 ;
         // teste du constructeur par copie.
 
         cout << endl<<"livre4 " << endl<<"Teste du contructeur par copie "<<endl;
-        cout << "nom " << livre4.getNom()<<endl;
-        cout << "Auteur " << livre4.getAuteur() <<endl;
-        cout << "Editeur " << livre4.getEditeur() <<endl;
-        cout << "Langue " << livre4.getLangue() <<endl;
-        cout << "Disponibilité " << livre4.getDisponible() <<endl;
-        cout << "Nombre de pages " << livre4.getNombre_de_pages() <<endl;
+        cout << "nom " << livre4.getName()<<endl;
+        cout << "Auteur " << livre4.getAuthor() <<endl;
+        cout << "Editor " << livre4.getEditor() <<endl;
+        cout << "Langue " << livre4.getLanguage() <<endl;
+        cout << "Disponibilité " << livre4.getAvailable() <<endl;
+        cout << "Nombre de pages " << livre4.getNumber_of_pages() <<endl;
     
 
     return 0;

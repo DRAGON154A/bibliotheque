@@ -21,6 +21,7 @@ public:
     std::string getNo();
     std::string getName();
     std::string getBirth();
+    ~User();
 
 };
 
